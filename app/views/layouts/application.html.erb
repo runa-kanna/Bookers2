@@ -2,61 +2,55 @@
 <html>
   <head>
     <title>Bookers2</title>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
-    
     <header>
       <% if user_signed_in? %>
-        <div class="navbar">
-          <div class="nav">
-            <li>
-              <%= link_to 'Home', new_book_path %>
-            </li>
-          </div>
-          <div class="nav">
-            <li>
-            <%= link_to 'User', user_path(current_user.id) %>              </li>
-          </div>
-          <div class="nav">
-            <li>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-            </li>
-          </div>
-          <div class="nav">
-            <li>
-              <%= link_to 'Books', "/books" %>
-            </li>
-          </div>
-          <% else %>
-          <div class="nav">
-            <li>
-              <%= link_to "Sign Up", new_user_registration_path %>
-            </li>
-          </div>
-          <div class="nav">
-            <li>
-              <%= link_to "Log in", new_user_session_path %>
-            </li>
-            <li>
-              <%= link_to "About", "homes/about" %>
-            </li>
-          </div>
-          <div class="nav">
-            <li>
-              <%= link_to 'Home', new_book_path %>
-            </li>
-          </div>
-        <% end %>
-      </div>  
+      <li>
+        <%= link_to 'Homes', "/books" %>
+      </li>
+      <li>
+        <%= link_to 'User', user_path(current_user.id) %>
+      </li>
+      <li>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      </li>
+      <li>
+        <%= link_to 'books', new_book_path %>
+      </li>
+      
+    <% else %>
+      <li>
+        <%= link_to "Sign in", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "Log in", new_user_session_path %>
+      </li>
+      <li>
+        <%= link_to 'About', about_path %>
+      </li>
+      <li>
+        <%= link_to 'Homes', "/books" %>
+      </li>
+    <% end %>
+
+
     </header>
 
-  <%= yield %>
-</body>
+    <%= yield %>
+
+    <footer>
+     <p>CopyRight Infratop.inc</p>
+    </footer>
+
+  </body>
 </html>
