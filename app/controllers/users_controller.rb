@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
-    @user = User.find(params[:id])
+    @users = User.all
+    @user = current_user
   end
 
   def show

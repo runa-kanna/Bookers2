@@ -25,13 +25,13 @@
           <div class="nav-list-item">
             <li>
               <i class="fa-solid fa-house"></i>
-              <%= link_to 'Homes', "/books" %>
+              <%= link_to 'Homes', user_path(current_user.id) %>
             </li>
           </div>
           <div class="nav-list-item">
             <li>
               <i class="fa-solid fa-user-plus"></i>
-              <%= link_to 'User', user_path(current_user.id) %>
+              <%= link_to 'User', "/users" %>
             </li>
           </div>
           <div class="nav-list-item">
@@ -43,7 +43,7 @@
           <div class="nav-list-item">
             <li>
               <i class="fa-solid fa-book"></i>
-              <%= link_to 'books', new_book_path %>
+              <%= link_to 'books', "/books" %>
             </li>
           </div>
         </div>
