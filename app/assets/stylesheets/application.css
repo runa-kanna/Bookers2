@@ -4,12 +4,6 @@
   box-sizing: border-box;
 }
 
-
-header {
-  padding: 8px 16px;
-  background-color: gray;
-}
-
 .navgation {
   margin: auto;
   padding: 0 15px;
@@ -21,6 +15,11 @@ header {
   padding: 8px;
   display: flex;
   list-style: none;
+  color: #fff;
+}
+
+.nav-list-item a {
+  color: #fff;
 }
 
 footer {

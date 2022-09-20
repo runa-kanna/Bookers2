@@ -9,38 +9,9 @@
 }
 
 main {
-  text-align: center;
-  margin: 0 400px;
+  margin: 0 15px;
 }
 
-.sccial i {
-  dispiay: inline-block;
-  margin-left: 20px;
-}
-
-.top-title {
-  margin-bottom: 8px;
-  display: flex;
-  flex-direction: row;
-}
-
-.text {
-  justify-content: center;
-  align-items: center;
-
-}
-
-.top-text {
-  margin-bottom: 16px;
-  display: flex;
-  flex-direction: row;
-}
-
-.about-title h1 {
-  margin-bottom: 8px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 16px;
-  margin: 0 auto;
+.row {
+  list-style: none;
 }
