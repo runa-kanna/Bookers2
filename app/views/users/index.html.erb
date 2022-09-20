@@ -1,41 +1,76 @@
-<div class="user-items">
-  <h1>User info</h1>
+<script src="https://kit.fontawesome.com/a8946225b7.js" crossorigin="anonymous"></script>
 
-    <div>
-    <%= image_tag @user.get_profile_image(100,100) %>
-    <% if @user == current_user %>
+<main>
+  <p id="notice">
+    <div class="container px-5 px-sm-0">
+      <div class="row">
+        <div class="col-md-3">
+          
+          <h2>User info</h2>
+          <%= image_tag @user.get_profile_image(100,100) %>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>name</th>
+                <th><%= @user.name %></th>
+              </tr>
+              <tr>
+                <th>introduction</th>
+                <th><%= @user.introduction %></th>
+              </tr>
+            </tbody>
+          </table>
 
-      <p>Name  <%= @user.name %></p>
+          <div class="row">
+            
+            <div class="sccial"></div>
+            
+            <a class="btn btn-outline-secondary bnt-block "></a>
+              <i class="fa-solid fa-user-gear"></i>
+              <%= link_to "プロフィール編集", edit_user_path(@user) %>
+          </div>
 
-      <p>Introduction  <%= @user.introduction %></p>
+          <h2 class="mt-3">New book</h2>
 
-      <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-      <% end %>
+            <%= form_with model: @book do |f| %>
+            <div class="form-grop">
+              <h4>Title</h4>
+                <%= f.text_field :title %>
+            </div>
+            <div class="form-grop">
+              <h4>Opinion</h4></h4>
+                <%= f.text_area :body %>
+            </div>
+            <div class="form-grop">
+              <input type="submit" name="commit" value="Create Book" Class="btn btn-success" date-disable-with="Create Book">
+            <% end %>
+            </div>
+        </div>
+
+        <div class="col-md-8 offset-md-1">
+        <h1>Users</h1>
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>image</th>
+                <th>name</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @users.each do |user| %>
+                <tr>
+                  <td><%= image_tag @user.get_profile_image(100,100)%></td>
+                  <td><%= user.name %></td>
+                  <td><%= link_to "show", user %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-
-
-</div>
-
-
-<div class="new">
-  <h1>New book</h1>
-  <%= form_with model: @book do |f| %>
-    <h4>タイトル</h4>
-    <%= f.text_field :title %>
-
-    <h4>感想</h4>
-    <%= f.text_area :body %>
-
-    <%= f.submit 'Create Book' %>
-  <% end %>
-</div>
-
-
-<h1>Users</h1>
-
-  <% @users.each do |user| %>
-  
-      <%= link_to user.name, user %>
-      <%= image_tag @user.get_profile_image(100,100) %>
-    
-  <% end %>
+  </p>
+</main>
