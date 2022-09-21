@@ -53,7 +53,7 @@
             </div>
             <div class="nav-list-item">
               <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
+                <%= link_to  destroy_user_session_path, method: :delete do %>
                   <i class="fa-solid fa-right-from-bracket"></i>Log out
                 <% end %>
             </div>
@@ -107,6 +107,14 @@
     </header>
 
     <main>
+      
+      <div class="text-success">
+        <%= flash[:notice] %>
+      </div>
+      <div class="text-danger">
+        <%= flash[:alret] %>
+      </div>
+      
       <%= yield %>
     </main>  
 

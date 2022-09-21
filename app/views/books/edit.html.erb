@@ -4,6 +4,16 @@
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
 
         <h1>Editing Book</h1>
+        
+      <% if @book.errors.any? %>
+      <%= @book.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+        
 
         <%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
 
