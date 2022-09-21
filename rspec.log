@@ -285,7 +285,7 @@ Userモデルのテスト
 
 Failures:
 
-  1) [STEP1] ユーザログイン前のテスト アバウト画面のテスト 表示内容の確認 URLが正しい
+  ) [STEP1] ユーザログイン前のテスト アバウト画面のテスト 表示内容の確認 URLが正しい
      [31mFailure/Error: visit '/home/about'[0m
      [31m[0m
      [31mActionController::RoutingError:[0m
@@ -313,7 +313,7 @@ Failures:
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/capybara-3.37.1/lib/capybara/dsl.rb:52:in `visit'[0m
      [36m# ./spec/system/01_before_login_spec.rb:34:in `block (3 levels) in <main>'[0m
 
-  2) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 リンクの内容を確認 Aboutを押すと、アバウト画面に遷移する
+  ) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 リンクの内容を確認 Aboutを押すと、アバウト画面に遷移する
      [31mFailure/Error: is_expected.to eq '/home/about'[0m
      [31m[0m
      [31m  expected: "/home/about"[0m
@@ -322,7 +322,7 @@ Failures:
      [31m  (compared using ==)[0m
      [36m# ./spec/system/01_before_login_spec.rb:93:in `block (4 levels) in <main>'[0m
 
-  3) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 新規登録成功のテスト 新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている
+  ) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 新規登録成功のテスト 新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている
      [31mFailure/Error: expect(current_path).to eq '/users/' + User.last.id.to_s[0m
      [31m[0m
      [31m  expected: "/users/1"[0m
@@ -331,7 +331,7 @@ Failures:
      [31m  (compared using ==)[0m
      [36m# ./spec/system/01_before_login_spec.rb:152:in `block (4 levels) in <main>'[0m
 
-  4) [STEP1] ユーザログイン前のテスト ユーザログイン ログイン成功のテスト ログイン後のリダイレクト先が、ログインしたユーザの詳細画面になっている
+  ) [STEP1] ユーザログイン前のテスト ユーザログイン ログイン成功のテスト ログイン後のリダイレクト先が、ログインしたユーザの詳細画面になっている
      [31mFailure/Error: expect(current_path).to eq '/users/' + user.id.to_s[0m
      [31m[0m
      [31m  expected: "/users/1"[0m
@@ -371,7 +371,7 @@ Failures:
      [31m  expected to find link "" with href "/users/1" but there were no matches[0m
      [36m# ./spec/system/02_after_login_spec.rb:52:in `block (4 levels) in <main>'[0m
 
-  9) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 「Book detail」と表示される
+  ) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 「Book detail」と表示される
      [31mFailure/Error: expect(page).to have_content 'Book detail'[0m
      [31m  expected to find text "Book detail" in "Bookers\nHomes\nUsers\nbooks\nLog out\nUser info!\nname 31wc7vjwwt introduction tr9igz1i0mhcwu8doemr\nNew book\nTitle\nOpinion\n6qcxpl5rb3cead029q4x\nBooks detail\n31wc7vjwwt ntvrk 6qcxpl5rb3cead029q4x Edit Delete\nCopyRight Infratop.inc"[0m
      [36m# ./spec/system/02_after_login_spec.rb:118:in `block (4 levels) in <main>'[0m
@@ -451,7 +451,7 @@ Failures:
       [31m  expected to find link "Show" with href "/users/2" but there were no matches[0m
       [36m# ./spec/system/02_after_login_spec.rb:275:in `block (4 levels) in <main>'[0m
 
-  19) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 「Book detail」と表示される
+  ) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 「Book detail」と表示される
       [31mFailure/Error: expect(page).to have_content 'Book detail'[0m
       [31m  expected to find text "Book detail" in "Bookers\nHomes\nUsers\nbooks\nLog out\nUser info!\nname j0gxid3dzk introduction hewj3s7iipdh12e1bdgx\nNew book\nTitle\nOpinion\nqd99gign4pj6q6ddsnu2\nBooks detail\nj0gxid3dzk f8oy9 qd99gign4pj6q6ddsnu2\nCopyRight Infratop.inc"[0m
       [36m# ./spec/system/03_finishing_touches_spec.rb:223:in `block (5 levels) in <main>'[0m
