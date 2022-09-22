@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   patch 'books/:id' => 'books#update',as: 'update_book'
 
   resources :books, only: [:new, :create, :index, :show, :edit, :destroy]
-  resources :users, only: [:show, :edit, :update, :index]
+  resources :users, only: [:show, :edit, :index, :update,]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
